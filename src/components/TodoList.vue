@@ -3,8 +3,8 @@
 	<div id="list-rendering">
 		<button @click="add()">add</button>
 		<ol>
-			<li v-for="todo in todos">
-				{{ todo.text }}
+			<li v-for="(todo, i) in todos" :key="i">
+				{{ i + ' ' + todo.text }}
 			</li>
 		</ol>
 	</div>
@@ -29,7 +29,7 @@
 		methods: {
 			add() {
 				this.todos.push({
-					text: '现在时间：' + new Date().toLocaleTimeString()
+					text: 'fuck：' + new Date().toLocaleTimeString()
 				})
 			}
 		}
